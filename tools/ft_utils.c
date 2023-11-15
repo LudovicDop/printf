@@ -1,20 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 10:29:17 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:04:54 by ldoppler         ###   ########.fr       */
+/*   Created: 2023/11/15 12:55:28 by ldoppler          #+#    #+#             */
+/*   Updated: 2023/11/15 13:02:35 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <unistd.h>
+#include "../ft_printf.h"
 
-int	*ft_printf(const char *string, ...);
-void    ft_c(const char *string, va_list args);

@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_c.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 10:29:17 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:04:54 by ldoppler         ###   ########.fr       */
+/*   Created: 2023/11/15 12:06:11 by ldoppler          #+#    #+#             */
+/*   Updated: 2023/11/15 13:14:29 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <unistd.h>
+#include "../ft_printf.h"
 
-int	*ft_printf(const char *string, ...);
-void    ft_c(const char *string, va_list args);
+void	ft_c(const char *string, va_list args)
+{
+	int		i;
+	char	c;
+	
+	i = 0;
+	c = va_arg(args, int);
+	while (string[i])
+	{
+		if (string[i] != '%')
+			ft_putchar_fd(string[i], 1);
+		else
+		{
+			i++;
+			ft_putchar_fd(c, 1);
+		}
+		i++;
+	}
+}

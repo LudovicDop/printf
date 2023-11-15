@@ -21,8 +21,6 @@ int	sum(int count, ...)
 
 int	main(void)
 {
-	printf("Hello World!\n");
-	printf("Sum = %d\n",sum(3, 1, 2, 3, NULL));
-	ft_printf("Hello World");
+	ft_printf("%cHello World %d",'a');
 	return (0);
 }
