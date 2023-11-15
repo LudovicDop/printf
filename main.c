@@ -1,26 +1,8 @@
 #include "ft_printf.h"
 
-int	sum(int count, ...)
-{
-	va_list	args;
-	va_start(args, count);
-	
-	int	s;
-	int	x;
-	
-	x = va_arg(args, int);	
-	s = 0;
-	while (x)
-	{
-		s += x;
-		x = va_arg(args, int);
-	}
-	va_end(args);
-	return(s);
-}
-
 int	main(void)
 {
-	ft_printf("%cHello World %d",'a');
+	printf("%cHellx World %d\n",'a', 42);
+	ft_printf("%cHello World %d %s\n",'a', 42,"Batard de merde");
 	return (0);
 }

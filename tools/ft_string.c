@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_c.c                                             :+:      :+:    :+:   */
+/*   ft_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 12:06:11 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:29:04 by ldoppler         ###   ########.fr       */
+/*   Created: 2023/11/15 13:37:08 by ldoppler          #+#    #+#             */
+/*   Updated: 2023/11/15 13:42:59 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_c(va_list args)
+void	ft_string(va_list args)
 {
-	char	c;
-	
-	c = va_arg(args, int);
-	ft_putchar_fd(c, 1);
+	ft_putstr_fd(va_arg(args, char*), 1);
 }

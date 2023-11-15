@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:23:56 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:40:10 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,13 @@ int	modulo_sum(char carac)
 void	search_good_fc(const char *string, char carac, va_list args)
 {
 	if (carac == 'c')
-	{
-		ft_c(string, args);
-		//printf("Char\n");
-	}
+		ft_c(args);
 	else if (carac == 's')
-		printf("String\n");
+		ft_string(args);
 	else if (carac == 'p')
 		printf("Pointer in hexa\n");
 	else if (carac == 'd')
-		printf("INT\n");
+		ft_int(args);	
 	else if (carac == 'i')
 		printf("Integer base 10\n");
 	else if (carac == 'u')

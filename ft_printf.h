@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:29:17 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:04:54 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:40:30 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,6 @@
 #include <unistd.h>
 
 int	*ft_printf(const char *string, ...);
-void    ft_c(const char *string, va_list args);
+void    ft_c(va_list args);
+void	ft_int(va_list args);
+void	ft_string(va_list args);
