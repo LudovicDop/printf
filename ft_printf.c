@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:13:19 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:23:56 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,14 @@ int	*ft_printf(const char *string, ...)
 		return (NULL);
 	while (string[i])
 	{
+		if (string[i] != '%')
+			ft_putchar_fd(string[i], 1);
 		if (modulo_sum(string[i]))
 		{
-			
 			search_good_fc(string, string[++i], args);
 		}
 		i++;
 	}
+	va_end(args);
 	return (0);
 }
