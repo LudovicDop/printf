@@ -3,8 +3,9 @@
 
 int	main(void)
 {
-	int x = printf("%s","Hello World!");
-	printf("%d",x);
-	ft_printf("%c",'0' - 256);
+	int x = printf("%c %c %c",'A','B','C');
+	printf("value %d\n",x);
+	int y = ft_printf("%c %c %c",'A', 'B', 'C');
+	printf("value %d\n",y);
 	return (0);
 }

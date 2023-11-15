@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 15:26:31 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:46:44 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	modulo_sum(char carac)
 	return (0);
 }
 
-void	search_good_fc(char carac, va_list args, t_info *info)
+void	search_good_fc(char carac, va_list args)
 {
 	if (carac == 'c')
-		ft_c(args,info);
+		ft_c(args);
 	else if (carac == 's')
 		ft_string(args);
 	else if (carac == 'p')
@@ -63,9 +63,10 @@ int	ft_printf(const char *string, ...)
 			ft_putchar_fd(string[i], 1);
 		if (modulo_sum(string[i]))
 		{
-			search_good_fc(string[++i], args, &info);
+			search_good_fc(string[++i], args);
 		}
 		i++;
+		info.count++;
 	}
 	va_end(args);
 	return (info.count);
