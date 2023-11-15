@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:40:10 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:51:16 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	modulo_sum(char carac)
 	return (0);
 }
 
-void	search_good_fc(const char *string, char carac, va_list args)
+void	search_good_fc(char carac, va_list args)
 {
 	if (carac == 'c')
 		ft_c(args);
@@ -34,9 +34,9 @@ void	search_good_fc(const char *string, char carac, va_list args)
 	else if (carac == 'd')
 		ft_int(args);	
 	else if (carac == 'i')
-		printf("Integer base 10\n");
+		ft_int(args);
 	else if (carac == 'u')
-		printf("Unsigned decimal base 10\n");
+		ft_u(args);
 	else if (carac == 'x')
 		printf("Hexa base 16 lowercase");
 	else if (carac == 'X')
@@ -46,21 +46,21 @@ void	search_good_fc(const char *string, char carac, va_list args)
 	else
 		printf("error\n");	
 }
-int	*ft_printf(const char *string, ...)
+int	ft_printf(const char *string, ...)
 {
 	int		i;
 	va_list	args;	
 	va_start(args, string);
 	i = 0;
 	if (!string)
-		return (NULL);
+		return (0);
 	while (string[i])
 	{
 		if (string[i] != '%')
 			ft_putchar_fd(string[i], 1);
 		if (modulo_sum(string[i]))
 		{
-			search_good_fc(string, string[++i], args);
+			search_good_fc(string[++i], args);
 		}
 		i++;
 	}
