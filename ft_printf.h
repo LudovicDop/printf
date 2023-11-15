@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:29:17 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 14:30:18 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:24:15 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+typedef struct s_info
+{
+	int	count;
+} t_info;
 int	ft_printf(const char *string, ...);
-void    ft_c(va_list args);
+void    ft_c(va_list args, t_info *info);
 void	ft_int(va_list args);
 void	ft_string(va_list args);
 void    ft_u(va_list args);

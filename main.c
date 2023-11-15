@@ -3,8 +3,8 @@
 
 int	main(void)
 {
-	unsigned int x = 2147483650;
-	printf("%cHellx World %d %i %u\n",'a', 42,42,x);
-	ft_printf("%cHello World %d %s %u\n",'a', 42,"Batard de merde",x);
+	int x = printf("%s","Hello World!");
+	printf("%d",x);
+	ft_printf("%c",'0' - 256);
 	return (0);
 }
