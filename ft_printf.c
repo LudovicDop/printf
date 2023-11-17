@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 13:11:08 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:31:59 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	search_good_fc(char carac, va_list args, t_info *info)
 	else if (carac == 'i')
 		ft_int(args, info);
 	else if (carac == 'u')
-		ft_u(args);
+		ft_u(args, info);
 	else if (carac == 'x')
 		printf("Hexa base 16 lowercase");
 	else if (carac == 'X')
