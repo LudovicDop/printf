@@ -6,13 +6,13 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:39:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 13:00:04 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:07:48 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*reverse(char *val)
+static char	*reverse(char *val)
 {
 	char	*ret;
 	char	buffer;
@@ -34,7 +34,7 @@ char	*reverse(char *val)
 	return (ret);
 }
 
-unsigned long	calc_int_lenght(unsigned long val)
+static unsigned long	calc_int_lenght(unsigned long val)
 {
 	int	lenght;
 
@@ -49,7 +49,7 @@ unsigned long	calc_int_lenght(unsigned long val)
 	return (lenght);
 }
 
-char	*search_hexa(unsigned long p_val)
+static char	*search_hexa(unsigned long p_val)
 {
 	unsigned long	reminder;
 	int				i;
