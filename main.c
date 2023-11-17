@@ -5,9 +5,9 @@ int	main(void)
 {
 	int	test = -10;
 	
-	int x = printf("Real => %x\n", test);
-	printf("Real value1 %d\n",x);
-	int y = ft_printf("Fake => %x\n", test);
-	printf("Fake value %d\n",y);
+	int x = printf("Real => %%\n");
+	//printf("Real value1 %%\n");
+	//int y = ft_printf("Fake => %%\n");
+	//printf("Fake value %d\n",y);
 	return (0);
 }
