@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 13:52:47 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:26:37 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	search_good_fc(char carac, va_list args, t_info *info)
 	else if (carac == 'x')
 		ft_x(args, info);
 	else if (carac == 'X')
-		printf("Hexa uppercase\n");
+		ft_x2(args, info);
 	else if (carac == '%')
 		printf("Sign\n");
 	else

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_x.c                                             :+:      :+:    :+:   */
+/*   ft_x2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 13:48:52 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 15:23:08 by ldoppler         ###   ########.fr       */
+/*   Created: 2023/11/17 15:24:23 by ldoppler          #+#    #+#             */
+/*   Updated: 2023/11/17 15:27:12 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@ static char	*reverse(char *val)
 	j = ft_strlen(val) - 1;
 	i = 0;
 	ret = malloc(sizeof(char) * ft_strlen(val) + 1);
-	//printf("val char : %s\n",val);
-	//printf("val : %zu",ft_strlen(val) + 1);
 	while (i < (int)ft_strlen(val))
 	{
-		buffer = ft_tolower(val[j]);
+		buffer = ft_toupper(val[j]);
 		ret[i] = buffer;
 		j--;
 		i++;
@@ -39,7 +37,7 @@ static char	*reverse(char *val)
 static unsigned int	calc_int_lenght(unsigned int val)
 {
 	int	lenght;
-	
+
 	lenght = 0;
 	if ((int)val < 0)
 		lenght--;
@@ -92,7 +90,7 @@ static char	*search_hexa(unsigned int p_val)
 	return (reverse(ret));
 }
 
-void	ft_x(va_list args, t_info *info)
+void	ft_x2(va_list args, t_info *info)
 {
 	unsigned int	val;
 	char			*ret;
