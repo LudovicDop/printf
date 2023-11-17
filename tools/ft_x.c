@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 13:48:52 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 14:35:09 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:21:24 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static char	*reverse(char *val)
 	j = ft_strlen(val) - 1;
 	i = 0;
 	ret = malloc(sizeof(char) * ft_strlen(val) + 1);
-	printf("%zu\n",ft_strlen(val) + 1);
+	//printf("val char : %s\n",val);
+	//printf("val : %zu",ft_strlen(val) + 1);
 	while (i < (int)ft_strlen(val))
 	{
 		buffer = ft_tolower(val[j]);
@@ -38,16 +39,34 @@ static char	*reverse(char *val)
 static unsigned int	calc_int_lenght(unsigned int val)
 {
 	int	lenght;
-
+	
 	lenght = 0;
+	if ((int)val < 0)
+		lenght--;
 	if (val == 0)
 		return (1);
 	while (val != 0)
 	{
-		lenght++;
 		val /= 10;
+		lenght++;
 	}
 	return (lenght);
+}
+
+static int search_malloc(unsigned int p_val)
+{
+	unsigned int	reminder;
+	int				i;
+
+	i = 0;
+	reminder = p_val;
+	while (p_val != 0)
+	{
+		reminder = p_val % 16;
+		p_val /= 16;
+		i++;
+	}
+	return (i);
 }
 
 static char	*search_hexa(unsigned int p_val)
@@ -56,7 +75,9 @@ static char	*search_hexa(unsigned int p_val)
 	int				i;
 	char			*ret;
 
-	ret = malloc(sizeof(char) * calc_int_lenght(p_val));
+	ret = malloc(sizeof(char) * search_malloc(p_val) + 1);
+	//printf("val %d\n",p_val);
+	//printf("lenght %zu\n",search_malloc(p_val) + 1);
 	i = 0;
 	reminder = p_val;
 	while (p_val != 0)
@@ -69,7 +90,8 @@ static char	*search_hexa(unsigned int p_val)
 		p_val /= 16;
 		i++;
 	}
-	ret[++i] = '\0';
+	ret[i] = '\0';
+	//printf("val : %d",i);
 	return (reverse(ret));
 }
 
