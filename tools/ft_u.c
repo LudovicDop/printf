@@ -6,13 +6,13 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:11:17 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 13:33:15 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:45:10 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void read_unsigned(unsigned int n, int fd, t_info *info)
+static void read_unsigned(unsigned long n, int fd, t_info *info)
 {
 	unsigned int	unsigned_n;
 	char			buffer;
@@ -37,4 +37,9 @@ void	ft_u(va_list args, t_info *info)
 	
 	val = va_arg(args, unsigned int);
 	read_unsigned(val, 1,info);
+	if (val == 0)
+	{
+		write(1, "0", 1);
+		info->count++;
+	}
 }
