@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_p.c                                             :+:      :+:    :+:   */
+/*   ft_x.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 16:39:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 14:34:39 by ldoppler         ###   ########.fr       */
+/*   Created: 2023/11/17 13:48:52 by ldoppler          #+#    #+#             */
+/*   Updated: 2023/11/17 14:35:09 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static char	*reverse(char *val)
 	j = ft_strlen(val) - 1;
 	i = 0;
 	ret = malloc(sizeof(char) * ft_strlen(val) + 1);
+	printf("%zu\n",ft_strlen(val) + 1);
 	while (i < (int)ft_strlen(val))
 	{
 		buffer = ft_tolower(val[j]);
@@ -34,7 +35,7 @@ static char	*reverse(char *val)
 	return (ret);
 }
 
-static unsigned long	calc_int_lenght(unsigned long val)
+static unsigned int	calc_int_lenght(unsigned int val)
 {
 	int	lenght;
 
@@ -49,9 +50,9 @@ static unsigned long	calc_int_lenght(unsigned long val)
 	return (lenght);
 }
 
-static char	*search_hexa(unsigned long p_val)
+static char	*search_hexa(unsigned int p_val)
 {
-	unsigned long	reminder;
+	unsigned int	reminder;
 	int				i;
 	char			*ret;
 
@@ -63,34 +64,29 @@ static char	*search_hexa(unsigned long p_val)
 		reminder = p_val % 16;
 		if (reminder < 10)
 			ret[i] = reminder % 16 + '0';
-		else 
+		else
 			ret[i] = reminder - 10 + 'A';
 		p_val /= 16;
 		i++;
 	}
-	ret[i] = 'x';
-	ret[++i] = '0';
 	ret[++i] = '\0';
 	return (reverse(ret));
 }
 
-void	ft_p(va_list args, t_info *info)
+void	ft_x(va_list args, t_info *info)
 {
-	void			*p;
-	unsigned long	p_val;
+	unsigned int	val;
 	char			*ret;
 
-	p = va_arg(args, void *);
-	p_val = (unsigned long)p;
-	if (p_val == 0)
+	val = va_arg(args, unsigned int);
+	if (val == 0)
 	{
-		ft_putstr_fd("0x0", 1);
-		info->count += 3;
+		write(1, "0", 1);
+		info->count++;
 		return ;
 	}
-	ret = search_hexa(p_val);
+	ret = search_hexa(val);
 	info->count += ft_strlen(ret);
 	ft_putstr_fd(ret, 1);
 	free(ret);
-	return ;
 }

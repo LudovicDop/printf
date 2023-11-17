@@ -3,11 +3,11 @@
 
 int	main(void)
 {
-	long	test = LONG_MIN;
+	int	test = -10;
 	
-	int x = printf("Real => %u\n", (unsigned int)test);
+	int x = printf("Real => %x\n", test);
 	printf("Real value1 %d\n",x);
-	int y = ft_printf("Fake => %u\n", test);
+	int y = ft_printf("Fake => %x\n", test);
 	printf("Fake value %d\n",y);
 	return (0);
 }
