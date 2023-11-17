@@ -3,11 +3,11 @@
 
 int	main(void)
 {
-	char *test = "Hello World!";
+	char *test = NULL; 
 		
-	int x = printf("=> %p", test);
-	printf("value1 %d\n",x);
-	int y = ft_printf("=> %p", test);
-	printf("value %d\n",y);
+	int x = printf("Real => %p", test);
+	printf("Real value1 %d\n",x);
+	int y = ft_printf("Fake => %p", test);
+	printf("Fake value %d\n",y);
 	return (0);
 }

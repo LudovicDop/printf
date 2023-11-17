@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:26:48 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 13:32:33 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:02:08 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_int(va_list args)
 {
 	int	x;
-	
+
 	x = va_arg(args, int);
 	ft_putnbr_fd(x, 1);
 }
