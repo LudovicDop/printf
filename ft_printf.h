@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:29:17 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 16:28:13 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:40:32 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,4 @@ void    ft_c(va_list args, t_info *info);
 void	ft_int(va_list args);
 void	ft_string(va_list args, t_info *info);
 void    ft_u(va_list args);
+void    ft_p(va_list args, t_info *info);

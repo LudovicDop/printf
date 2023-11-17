@@ -3,9 +3,11 @@
 
 int	main(void)
 {
-	int x = printf(" %s ","Hello");
+	char *test = "Hello World!";
+		
+	int x = printf("=> %p", test);
 	printf("value1 %d\n",x);
-	int y = ft_printf(" %s ","Hello");
+	int y = ft_printf("=> %p", test);
 	printf("value %d\n",y);
 	return (0);
 }

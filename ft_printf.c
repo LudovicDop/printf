@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/15 16:28:24 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:40:18 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	search_good_fc(char carac, va_list args, t_info *info)
 	else if (carac == 's')
 		ft_string(args, info);
 	else if (carac == 'p')
-		printf("Pointer in hexa\n");
+		ft_p(args, info);
 	else if (carac == 'd')
 		ft_int(args);	
 	else if (carac == 'i')
