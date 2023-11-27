@@ -6,7 +6,7 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:32:03 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 15:33:14 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:50:01 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,12 @@ void	search_good_fc(char carac, va_list args, t_info *info)
 	else if (carac == 'X')
 		ft_x2(args, info);
 	else if (carac == '%')
-		ft_modulo(args, info);
+		ft_modulo(info);
 	else
-		printf("error\n");
+	{
+		ft_putstr_fd("%", 1);
+		ft_putchar_fd(carac, 1);
+	}
 }
 
 int	ft_printf(const char *string, ...)
@@ -53,11 +56,11 @@ int	ft_printf(const char *string, ...)
 	va_list	args;	
 	t_info	info;
 
+	if (!string)
+		return (0);
 	va_start(args, string);
 	info.count = 0;
 	i = 0;
-	if (!string)
-		return (0);
 	while (string[i])
 	{
 		if (string[i] != '%')

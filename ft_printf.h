@@ -6,15 +6,17 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:29:17 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 15:34:00 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:30:58 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <unistd.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include "./libft/libft.h"
+# include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
 
 typedef struct s_info
 {
@@ -27,5 +29,6 @@ void	ft_string(va_list args, t_info *info);
 void	ft_u(va_list args, t_info *info);
 void	ft_p(va_list args, t_info *info);
 void	ft_x(va_list args, t_info *info);
-void    ft_x2(va_list args, t_info *info);
-void    ft_modulo(va_list args, t_info *info);
+void	ft_x2(va_list args, t_info *info);
+void	ft_modulo(t_info *info);
+#endif
