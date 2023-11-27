@@ -6,13 +6,13 @@
 /*   By: ldoppler <ldoppler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:31:44 by ldoppler          #+#    #+#             */
-/*   Updated: 2023/11/17 15:33:01 by ldoppler         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:30:48 by ldoppler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_modulo(va_list args, t_info *info)
+void	ft_modulo(t_info *info)
 {
 	write(1, "%", 1);
 	info->count++;
